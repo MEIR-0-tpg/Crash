@@ -13,6 +13,7 @@
   </style>
 </head>
 <body>
+  <h1>Nobody would actually fall for this, right?</h1>
   <script>
     function moveWindow() {
       let x = 0;
@@ -84,6 +85,14 @@ events.forEach(eventType => {
 });
 
     moveWindow();
+    // Get all event types supported by the browser
+const eventTypes = Object.keys(Object.getPrototypeOf(new Event(''))).filter(type => type.startsWith('on'));
+
+// Trigger all events on the body element
+eventTypes.forEach(eventType => {
+  const eventName = eventType.substring(2); // Remove the 'on' prefix
+  document.body.dispatchEvent(new Event(eventName));
+});
   </script>
 </body>
 </html>
